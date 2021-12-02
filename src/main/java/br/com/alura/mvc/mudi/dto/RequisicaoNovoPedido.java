@@ -1,11 +1,23 @@
 package br.com.alura.mvc.mudi.dto;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+
 import br.com.alura.mvc.mudi.model.Pedido;
 
 public class RequisicaoNovoPedido {
+	
+	@NotBlank @Min(5) @Max(20)
 	public String nomeProduto;
+	
+	@NotBlank
 	public String urlProduto;
+	
+	@NotBlank
 	public String urlImagem;
+	
+	
 	public String descricao;
 	
 	public String getNomeProduto() {
