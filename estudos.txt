@@ -1,0 +1,12 @@
+== 06/12/2021
+- criando um template html
+
+- usando a tag th:fragment
+	th:fragment="nome do componente html"
+
+- usando a tag th:replace
+	th:replace="~{nome do fragment :: nome do componente}"
+	th:replace="~{me do fragment :: nome do componente(param para o componente)}"
+	
+	
+=== 07/12/2021
