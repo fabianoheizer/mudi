@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,6 +22,9 @@ public class Pedido {
 	private String urlProduto;
 	private String descricao;
 	private String urlImagem;
+	
+	@Enumerated(EnumType.STRING)
+	private StatusPedido status;
 	
 	public Long getId() {
 		return id;
@@ -62,6 +67,12 @@ public class Pedido {
 	}
 	public void setUrlImagem(String urlImagem) {
 		this.urlImagem = urlImagem;
+	}
+	public StatusPedido getStatus() {
+		return status;
+	}
+	public void setStatus(StatusPedido status) {
+		this.status = status;
 	}
 	
 }

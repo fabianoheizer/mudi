@@ -1,14 +1,15 @@
 package br.com.alura.mvc.mudi.dto;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import br.com.alura.mvc.mudi.model.Pedido;
+import br.com.alura.mvc.mudi.model.StatusPedido;
 
 public class RequisicaoNovoPedido {
 	
-	@NotBlank @Min(5) @Max(20)
+	@NotBlank
+	@Size(min = 5, max = 50)
 	public String nomeProduto;
 	
 	@NotBlank
@@ -17,8 +18,8 @@ public class RequisicaoNovoPedido {
 	@NotBlank
 	public String urlImagem;
 	
-	
 	public String descricao;
+	
 	
 	public String getNomeProduto() {
 		return nomeProduto;
@@ -51,6 +52,7 @@ public class RequisicaoNovoPedido {
 		pedido.setUrlProduto(urlProduto);
 		pedido.setUrlImagem(urlImagem);
 		pedido.setDescricao(descricao);
+		pedido.setStatus(StatusPedido.AGUARDANDO);
 		return pedido;
 	}
 	
